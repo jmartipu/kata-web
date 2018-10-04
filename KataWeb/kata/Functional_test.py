@@ -4,11 +4,12 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import platform
 
+
 class FunctionalTest(TestCase):
 
     def setUp(self):
         if platform.system() == 'Windows':
-            driver = '/Users/juanvillegas/Documents/Ingenieria de Software/ProcesosAgiles/katas/kata-web/chromedriver'
+            driver = 'D:\\Python\\chromedriver.exe'
         else:
             driver = '/Users/juanvillegas/Documents/Ingenieria de Software/ProcesosAgiles/katas/kata-web/chromedriver'
         self.browser = webdriver.Chrome(driver)
