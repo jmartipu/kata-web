@@ -230,7 +230,8 @@ ENV/
 # End of https://www.gitignore.io/api/macos,linux,django,python,pycharm
  @jjr2040
    
- 
+# kataweb
+*/**/local_settings.py
 
 Leave a comment
 Attach files by dragging & dropping, , or pasting from the clipboard.  Styling with Markdown is supported
