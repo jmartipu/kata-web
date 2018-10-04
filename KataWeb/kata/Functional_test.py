@@ -2,11 +2,16 @@ __author__ = 'asistente'
 from unittest import TestCase
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import platform
 
 class FunctionalTest(TestCase):
 
     def setUp(self):
-        self.browser = webdriver.Chrome("D:\\Python\\chromedriver.exe")
+        if platform.system() == 'Windows':
+            driver = '/Users/juanvillegas/Documents/Ingenieria de Software/ProcesosAgiles/katas/kata-web/chromedriver'
+        else:
+            driver = '/Users/juanvillegas/Documents/Ingenieria de Software/ProcesosAgiles/katas/kata-web/chromedriver'
+        self.browser = webdriver.Chrome(driver)
 
     def tearDown(self):
         self.browser.quit()
