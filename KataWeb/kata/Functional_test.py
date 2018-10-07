@@ -27,6 +27,8 @@ class FunctionalTest(TestCase):
         link = self.browser.find_element_by_id('id_register')
         link.click()
 
+        self.browser.implicitly_wait(1)
+
         nombre = self.browser.find_element_by_id('id_nombre')
         nombre.send_keys('Juan Daniel')
 
