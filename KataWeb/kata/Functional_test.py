@@ -85,10 +85,10 @@ class FunctionalTest(TestCase):
         self.browser.implicitly_wait(1)
 
         nombre = self.browser.find_element_by_id('id_username')
-        nombre.send_keys('admin')
+        nombre.send_keys('juan645')
 
         apellidos = self.browser.find_element_by_id('id_password')
-        apellidos.send_keys('villegas')
+        apellidos.send_keys('clave123')
 
         botonLogin = self.browser.find_element_by_id('id_login')
         botonLogin.click()
@@ -107,10 +107,10 @@ class FunctionalTest(TestCase):
         self.browser.implicitly_wait(1)
 
         nombre = self.browser.find_element_by_id('id_username')
-        nombre.send_keys('pedro')
+        nombre.send_keys('juan645')
 
         apellidos = self.browser.find_element_by_id('id_password')
-        apellidos.send_keys('villegas')
+        apellidos.send_keys('clave123')
 
         botonLogin = self.browser.find_element_by_id('id_login')
         botonLogin.click()
@@ -132,3 +132,11 @@ class FunctionalTest(TestCase):
 
         telefono = self.browser.find_element_by_id('id_telefono')
         self.assertIn('1234567', telefono.text)
+
+    def testInOrder(self):
+        self.setUp()
+        self.tearDown()
+        self.test_title()
+        self.test_registro()
+        self.test_verDetalle()
+        self.test_edit()
