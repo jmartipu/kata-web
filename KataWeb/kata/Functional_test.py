@@ -98,7 +98,6 @@ class FunctionalTest(TestCase):
         nombre = self.browser.find_element_by_id('id_name')
         self.assertIn('Juan Daniel Arevalo', nombre.text)
 
-
     def test_edit(self):
         self.browser.get('http://localhost:8000')
         link = self.browser.find_element_by_id('id_login')
@@ -152,9 +151,8 @@ class FunctionalTest(TestCase):
         self.browser.implicitly_wait(5)
 
         correoComentario = self.browser.find_element_by_xpath("//div[@id='comentarios']/div[1]/h4[1]")
-        textoComentario = self.browser.find_element_by_xpath("//div[@id='comentarios']/div[1]/p[text()='comentario1']")
+        textoComentario = self.browser.find_element_by_xpath("//div[@id='comentarios']/div[1]/p[1]")
 
         self.assertIn('prueba@prueba.com', correoComentario.text)
         self.assertIn('comentario1', textoComentario.text)
-
 
