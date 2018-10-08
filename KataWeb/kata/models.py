@@ -23,7 +23,7 @@ class Trabajador(models.Model):
     telefono = models.CharField(max_length=1000)
     correo = models.CharField(max_length=1000)
     imagen = models.ImageField(upload_to='photos')
-    usuarioId = models.OneToOneField(User, null=True)
+    usuarioId = models.OneToOneField(User, null=True, related_name='trabajador')
 
 
 class Comentario(models.Model):

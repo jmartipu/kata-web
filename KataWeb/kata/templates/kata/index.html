@@ -29,7 +29,7 @@
 <body>
 <ul class="nav navbar-nav navbar-right" style="padding-right: 20px">
     {% if user.is_authenticated %}
-        <li>Bienvenido <span id="id_name">{{ user.first_name }} {{ user.last_name }}</span></li>
+        <li>Bienvenido <span id="id_name">{{ user.first_name }} {{ user.last_name }}</span> / <span id="id_telefono">{{ user.trabajador.telefono }}</span></li>
             <li><a href="{% url 'principal:editar' idTrabajador=user.id %}" id="id_editar"><span class="glyphicon glyphicon-user"></span> Editar</a></li>
     <li>
             <a href="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
