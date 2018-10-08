@@ -85,15 +85,16 @@ class FunctionalTest(TestCase):
         self.browser.implicitly_wait(1)
 
         nombre = self.browser.find_element_by_id('id_username')
-        nombre.send_keys('juan645')
+        nombre.send_keys('admin')
 
         apellidos = self.browser.find_element_by_id('id_password')
-        apellidos.send_keys('clave123')
+        apellidos.send_keys('villegas')
 
         botonLogin = self.browser.find_element_by_id('id_login')
         botonLogin.click()
 
-        self.browser.implicitly_wait(3)
+        self.browser.implicitly_wait(5)
 
         nombre = self.browser.find_element_by_id('id_name')
-        self.assertIn('Juan Daniel Arevalo', nombre.text)
+        self.assertIn('Juan Villegas', nombre.text)
+        self.assertIn('BuscoAyuda', self.browser.title)

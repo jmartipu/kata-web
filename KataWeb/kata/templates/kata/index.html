@@ -29,14 +29,14 @@
 <body>
 <ul class="nav navbar-nav navbar-right" style="padding-right: 20px">
     {% if user.is_authenticated %}
-
+        <li>Bienvenido <span id="id_name">{{ user.first_name }} {{ user.last_name }}</span></li>
             <li><a href="{% url 'principal:editar' idTrabajador=user.id %}" id="id_editar"><span class="glyphicon glyphicon-user"></span> Editar</a></li>
     <li>
             <a href="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
         </li>
     {% else %}
         <li><a href="#" id="id_register"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
-        <li><a href="#" id="id_login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="{% url 'login' %}" id="id_login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     {% endif %}
 </ul>
 <div class="jumbotron" style="padding-left: 20px; height: 50%">
