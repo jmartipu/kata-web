@@ -107,7 +107,7 @@ class FunctionalTest(TestCase):
         self.browser.implicitly_wait(1)
 
         nombre = self.browser.find_element_by_id('id_username')
-        nombre.send_keys('admin')
+        nombre.send_keys('pedro')
 
         apellidos = self.browser.find_element_by_id('id_password')
         apellidos.send_keys('villegas')
