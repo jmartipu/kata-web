@@ -160,8 +160,8 @@ class FunctionalTest(TestCase):
     def test_InOrder(self):
         self.test_title()
         self.test_registro()
-        self.test_logIn()
         self.test_verDetalle()
+        self.test_logIn()
         self.test_edit()
         self.browser.implicitly_wait(5)
         self.test_addComentario()
