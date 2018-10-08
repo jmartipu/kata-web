@@ -96,8 +96,8 @@ class FunctionalTest(TestCase):
         self.browser.implicitly_wait(5)
 
         nombre = self.browser.find_element_by_id('id_name')
-        self.assertIn('Juan Villegas', nombre.text)
-        self.assertIn('BuscoAyuda', self.browser.title)
+        self.assertIn('Juan Daniel Arevalo', nombre.text)
+
 
     def test_edit(self):
         self.browser.get('http://localhost:8000')
@@ -151,8 +151,8 @@ class FunctionalTest(TestCase):
 
         self.browser.implicitly_wait(5)
 
-        correoComentario = self.browser.find_element_by_xpath("//div[@id='comentarios']/h4[text()='prueba@prueba.com']")
-        textoComentario = self.browser.find_element_by_xpath("//div[@id='comentarios']/p[text()='comentario1']")
+        correoComentario = self.browser.find_element_by_xpath("//div[@id='comentarios']/div[1]/h4[1]")
+        textoComentario = self.browser.find_element_by_xpath("//div[@id='comentarios']/div[1]/p[text()='comentario1']")
 
         self.assertIn('prueba@prueba.com', correoComentario.text)
         self.assertIn('comentario1', textoComentario.text)
@@ -160,6 +160,8 @@ class FunctionalTest(TestCase):
     def test_InOrder(self):
         self.test_title()
         self.test_registro()
+        self.test_logIn()
         self.test_verDetalle()
         self.test_edit()
+        self.browser.implicitly_wait(5)
         self.test_addComentario()
