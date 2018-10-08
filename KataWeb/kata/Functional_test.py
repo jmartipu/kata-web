@@ -133,9 +133,7 @@ class FunctionalTest(TestCase):
         telefono = self.browser.find_element_by_id('id_telefono')
         self.assertIn('1234567', telefono.text)
 
-    def testInOrder(self):
-        self.setUp()
-        self.tearDown()
+    def test_InOrder(self):
         self.test_title()
         self.test_registro()
         self.test_verDetalle()
