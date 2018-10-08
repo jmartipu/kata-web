@@ -98,3 +98,37 @@ class FunctionalTest(TestCase):
         nombre = self.browser.find_element_by_id('id_name')
         self.assertIn('Juan Villegas', nombre.text)
         self.assertIn('BuscoAyuda', self.browser.title)
+
+    def test_edit(self):
+        self.browser.get('http://localhost:8000')
+        link = self.browser.find_element_by_id('id_login')
+        link.click()
+
+        self.browser.implicitly_wait(1)
+
+        nombre = self.browser.find_element_by_id('id_username')
+        nombre.send_keys('admin')
+
+        apellidos = self.browser.find_element_by_id('id_password')
+        apellidos.send_keys('villegas')
+
+        botonLogin = self.browser.find_element_by_id('id_login')
+        botonLogin.click()
+
+        self.browser.implicitly_wait(5)
+
+        botonEdit = self.browser.find_element_by_id('id_editar')
+        botonEdit.click()
+
+        self.browser.implicitly_wait(5)
+
+        telefono = self.browser.find_element_by_id('id_telefono')
+        telefono.send_keys('1234567')
+
+        botonEdit = self.browser.find_element_by_id('id_save')
+        botonEdit.click()
+
+        self.browser.implicitly_wait(5)
+
+        telefono = self.browser.find_element_by_id('id_telefono')
+        self.assertIn('1234567', telefono.text)
