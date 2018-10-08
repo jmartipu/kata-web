@@ -157,11 +157,4 @@ class FunctionalTest(TestCase):
         self.assertIn('prueba@prueba.com', correoComentario.text)
         self.assertIn('comentario1', textoComentario.text)
 
-    def test_InOrder(self):
-        self.test_title()
-        self.test_registro()
-        self.test_verDetalle()
-        self.test_logIn()
-        self.test_edit()
-        self.browser.implicitly_wait(5)
-        self.test_addComentario()
+
