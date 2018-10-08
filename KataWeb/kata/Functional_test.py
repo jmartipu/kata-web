@@ -90,10 +90,10 @@ class FunctionalTest(TestCase):
         apellidos = self.browser.find_element_by_id('id_password')
         apellidos.send_keys('clave123')
 
-        botonLogin = self.browser.find_element(By.XPATH, '//button[type()="submit"]')
+        botonLogin = self.browser.find_element_by_id('id_login')
         botonLogin.click()
 
         self.browser.implicitly_wait(3)
 
-        nombre = self.browser.find_element_by_id('id_login')
+        nombre = self.browser.find_element_by_id('id_name')
         self.assertIn('Juan Daniel Arevalo', nombre.text)
