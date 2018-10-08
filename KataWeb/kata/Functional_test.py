@@ -162,3 +162,4 @@ class FunctionalTest(TestCase):
         self.test_registro()
         self.test_verDetalle()
         self.test_edit()
+        self.test_addComentario()
