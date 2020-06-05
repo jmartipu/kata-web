@@ -22,7 +22,7 @@ python-dateutil = "==2.7.3"
 selenium = "==3.14.1"
 six = "==1.11.0"
 "urllib3" = "==1.23"
-Django = "==1.9.2"
+Django = "==1.11.29"
 pytz = "==2018.5"
 
 [dev-packages]
